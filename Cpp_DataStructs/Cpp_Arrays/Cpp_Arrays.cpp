@@ -1,7 +1,26 @@
 #include <iostream>
-
+#include <memory>
+#include <vector>
 using namespace std;
 
+
+class node_obj {
+	private:
+	public:
+		int id;
+		unique_ptr<node_obj> previous_node;
+		unique_ptr<node_obj> next_node;
+};
+
+typedef struct node {
+	int id;
+	unique_ptr<node> previous_node;
+	unique_ptr<node> next_node;
+} node_struct;
+
+unique_ptr<node_struct> newNode(void){
+	return unique_ptr<node_struct>(new node_struct);
+};
 int main() {
 
 	cout << "A demonstration of the various ways arrays can be utilized and made in Cpp:" << endl;
@@ -23,7 +42,7 @@ int main() {
 		 *   |
 		 *   |	
 		 *   |
-		 * /
+		 */
 	}
 	// Bit Sets
 	{}
@@ -36,6 +55,21 @@ int main() {
 	// Vectors and Dynamic Arrays
 	{}
 	// Uses
-	{}
+	{
+	//Linked List
+		//Object
+		{
+			unique_ptr<node_obj> node1(new node_obj);
+			unique_ptr<node_obj> node2 = new node_obj;
+			unique_ptr<node_obj> node3 = make_unique(node_obj);
+		}
+		//Struct
+		{
+			unique_ptr<node_struct> node1(new node_struct);
+			//or
+			auto node2 = newNode(); 
+		}
+
+	}
 	return 0;
 }
