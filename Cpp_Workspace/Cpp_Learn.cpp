@@ -5,9 +5,6 @@
 template <typename T>
 inline void templateFunc(T& input){}
 
-template <typename T> T privateProp;
-template <typename T> T publicProp;
-
 template <typename T>
 TemplateClass<T>::TemplateClass(){}
 //TemplateClass<T>::~TemplateClass(){}
@@ -21,8 +18,15 @@ int main(void){
     ref->add(a);
     ref->sub(*b);
     delete ref;
-    return 0;}
+    delete b;
+    int c, d;
+    c = 10;
+    d = 20;
+    InitRef *IR = new InitRef(c,d);
 
+    return 0;
+    
+    }
 #endif
 
 
