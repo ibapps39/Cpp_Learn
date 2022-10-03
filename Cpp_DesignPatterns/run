@@ -1,0 +1,7 @@
+mkdir CPP_Creational_Patterns;
+cd ./CPP_Creational_Patterns; 
+touch Builder Factory Protoype Singleton Structural Bridge Composite Decorator Facade Proxy;
+cd ..; 
+mkdir CPP_Behavioral_Patterns;
+cd CPP_Behavioral_Patterns;
+touch Chain_of_Responsibility Command Iterator Mediator Memento Observer State Strategy Template Visitor 
